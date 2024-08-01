@@ -1,0 +1,19 @@
+<section class="">
+  <div class="container py-5 text-center">
+    <div class="row">
+      @for (movieitem of datalist; track $index)
+      {
+      <div class="col-md-3 col-12 p-3">
+        <div class="card">
+          <img [src]="'https://image.tmdb.org/t/p/w500'+movieitem.poster_path" class="card-img-top w-100" [alt]="movieitem.title">
+          <div class="card-body">
+            <h5 class="card-title">{{movieitem.title? movieitem.title:movieitem.name}}</h5>
+            <p class="card-text">{{movieitem.overview.split(" ").slice(0,15).join(" ")}}</p>
+            <button class="btn btn-info text-white" aria-label="Watch Now">Watch Now</button>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
